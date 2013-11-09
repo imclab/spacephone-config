@@ -1,0 +1,16 @@
+context spacephone-out {
+    _X. => {
+        NoOp("Space phone call to ${EXTEN}");
+        sipcount=${ENUMLOOKUP(${EXTEN},sip,c,,e164.spacephone.org)};
+        counter=0;
+        if (${counter} < ${sipcount}) {
+            while (${counter} < ${sipcount}) {
+                Dial(SIP/${ENUMLOOKUP(${EXTEN},sip,,${counter},e164.spacephone.org)});
+                counter=${counter}+1;
+            }
+        } else {
+            NoOp("No valid entries in e164.spacephone.org for ${EXTEN}");
+            Dial(DAHDI/g1/${EXTEN});
+        }
+    };
+};
