@@ -1,0 +1,19 @@
+#include "/path/to/spacephone-config/asterisk/extensions-spacephone.ael"
+
+; This context is your default context for the SIP domain
+context example-external {
+    _319799AA. => Goto(example-phones,${EXTEN:8},1);
+};
+
+; This context holds your internal extensions
+context example-phones {
+    1000 => Dial(SIP/example-phone-1000);
+};
+
+; This is the default context for your SIP users
+context example-local {
+    incluldes {
+        example-phones;
+        spacephone-out;
+    };
+};
