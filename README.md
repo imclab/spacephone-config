@@ -17,8 +17,8 @@ SIP support
 
 You can make use of the SIP proxy on spacephone.org, by calling:
 
-    sip:<exten>@spacephone.org
+ *  ``sip:<exten>@spacephone.org``
 
 Example echo service is available at:
 
-    [sip:319799438000@spacephone.org](sip:319799438000@spacephone.org)
+ *  [sip:319799438000@spacephone.org](sip:319799438000@spacephone.org)
