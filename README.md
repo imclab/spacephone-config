@@ -15,7 +15,8 @@ The following implementations are documented here:
 SIP support
 -----------
 
-You can make use of the SIP proxy on spacephone.org, by calling:
+Devices that do not have ENUM support, can make use of the SIP proxy on
+spacephone.org, by calling:
 
  *  ``sip:<exten>@spacephone.org``
 
